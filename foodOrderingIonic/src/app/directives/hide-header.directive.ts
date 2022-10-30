@@ -8,7 +8,6 @@ export class HideHeaderDirective implements AfterViewInit {
   @Input('appHideHeader') header: any;
   private headerHeight = isPlatform('ios')? 44:56;
   private children: any;
-  private showLocationDetail: boolean;
 
   constructor(
     private renderer: Renderer2,
@@ -37,10 +36,5 @@ export class HideHeaderDirective implements AfterViewInit {
       this.children = this.header.children;
   }
 
-
-  onScroll(event){
-    const offset = event.detail.top;
-    this.showLocationDetail = offset > 50;
-  }
 
 }

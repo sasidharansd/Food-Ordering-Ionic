@@ -48,4 +48,9 @@ export class HomePage implements OnInit {
     },2000);
   }
 
+  public onScroll(event){
+    const offset= event.detail.scrollTop;
+    this.showLocationDetail = offset > 50;
+  }
+
 }
